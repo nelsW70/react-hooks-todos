@@ -8,7 +8,7 @@ export default function TodoList() {
 
   return (
     <div className="container mx-auto max-w-md text-center font-mono">
-      <h1 className="text-bold">{title}</h1>
+      <h1 className="text-bold p-8">{title}</h1>
       <ul className="list-reset text-white p-0">
         {state.todos.map(todo => (
           <li
@@ -28,7 +28,9 @@ export default function TodoList() {
             <button>
               <span className="material-icons">edit</span>
             </button>
-            <button>
+            <button
+              onClick={() => dispatch({ type: 'REMOVE_TODO', payload: todo })}
+            >
               <span className="material-icons">delete</span>
             </button>
           </li>
