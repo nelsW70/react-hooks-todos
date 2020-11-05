@@ -26,12 +26,12 @@ export default function TodoList() {
               {todo.text}
             </span>
             <button>
-              <span className="material-icons">edit</span>
+              <span className="material-icons pr-3">edit</span>
             </button>
             <button
               onClick={() => dispatch({ type: 'REMOVE_TODO', payload: todo })}
             >
-              <span className="material-icons">delete</span>
+              <span className="material-icons pr-4">delete</span>
             </button>
           </li>
         ))}
