@@ -25,7 +25,11 @@ export default function TodoList() {
             >
               {todo.text}
             </span>
-            <button>
+            <button
+              onClick={() =>
+                dispatch({ type: 'SET_CURRENT_TODO', payload: todo })
+              }
+            >
               <span className="material-icons pr-3">edit</span>
             </button>
             <button
