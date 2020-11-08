@@ -33,14 +33,14 @@ export default function reducer(state, action) {
       };
 
     case 'UPDATE_TODO':
-      if (!action.payload) {
-        return { ...state, currentToDo: {} };
-      }
-      if (state.todos.findIndex(t => t.title === action.payload) > -1) {
-        return { ...state, currentToDo: {} };
-      }
+      // if (!action.payload) {
+      //   return { ...state, currentToDo: {} };
+      // }
+      // if (state.todos.findIndex(t => t.title === action.payload) > -1) {
+      //   return { ...state, currentToDo: {} };
+      // }
 
-      const updatedTodo = { ...state.currentTodo, text: action.payload };
+      const updatedTodo = { ...action.payload };
       const updatedTodoIndex = state.todos.findIndex(
         t => t.id === state.currentTodo.id
       );
