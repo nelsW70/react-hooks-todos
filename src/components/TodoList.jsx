@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import axios from 'axios';
 import TodosContext from '../context';
 
 export default function TodoList() {
@@ -33,7 +34,12 @@ export default function TodoList() {
               <span className="material-icons pr-3">edit</span>
             </button>
             <button
-              onClick={() => dispatch({ type: 'REMOVE_TODO', payload: todo })}
+              onClick={async () => {
+                await axios.delete(
+                  `https://hooks-api-flame.vercel.app/todos/${todo.id}`
+                );
+                dispatch({ type: 'REMOVE_TODO', payload: todo });
+              }}
             >
               <span className="material-icons pr-4">delete</span>
             </button>
